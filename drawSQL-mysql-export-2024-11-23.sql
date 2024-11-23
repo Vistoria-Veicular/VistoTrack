@@ -1,73 +1,73 @@
 CREATE TABLE `Pessoas`(
-    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `Nome` TEXT NULL,
-    `CPF` BIGINT NULL,
-    `CEP` BIGINT NULL,
-    `Logradouro` VARCHAR(255) NULL,
-    `numero` BIGINT NULL,
-    `complemento` VARCHAR(255) NULL,
-    `Naturalidade` TEXT NULL,
-    `Estado` TEXT NULL,
-    `Cidade` TEXT NULL,
-    `EMail` VARCHAR(255) NULL,
-    `RG` BIGINT NULL,
-    `mae` TEXT NOT NULL,
-    `Telefone` VARCHAR(255) NULL,
-    `Nascimento` DATE NULL
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `Nome` TEXT NOT NULL,
+    `CPF` INT NOT NULL,
+    `CEP` INT NOT NULL,
+    `Logradouro` VARCHAR(255) NOT NULL,
+    `numero` INT NOT NULL,
+    `complemento` VARCHAR(255) NOT NULL,
+    `Naturalidade` TEXT NOT NULL,
+    `Estado` TEXT NOT NULL,
+    `Cidade` TEXT NOT NULL,
+    `EMail` VARCHAR(255) NOT NULL,
+    `RG` INT NOT NULL,
+    `mae` TEXT NULL,
+    `Telefone` VARCHAR(255) NOT NULL,
+    `Nascimento` DATE NOT NULL
 );
 CREATE TABLE `Usuarios`(
-    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `EMail` VARCHAR(255) NULL,
-    `Senha` VARCHAR(255) NULL,
-    `Hash` VARCHAR(255) NULL,
-    `Tipo_Usuario` BIGINT NULL,
-    `Permissao` BIGINT NULL,
-    `Ultimo_Login` DATETIME NULL,
-    `Final_Usuario` INT NULL,
-    `Id_Pessoa` INT NULL
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `EMail` VARCHAR(255) NOT NULL,
+    `Senha` VARCHAR(255) NOT NULL,
+    `Hash` VARCHAR(255) NOT NULL,
+    `Tipo_Usuario` INT NOT NULL,
+    `Permissao` INT NOT NULL,
+    `Ultimo_Login` DATETIME NOT NULL,
+    `Final_Usuario` INT NOT NULL,
+    `Id_Pessoa` INT NOT NULL
 );
 CREATE TABLE `Veiculos`(
-    `Id_Veiculo` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `Marca` TEXT NULL,
-    `Modelo` TEXT NULL,
-    `Ano_Fabricacao` INT NULL,
-    `placa` VARCHAR(255) NULL,
-    `ultima_verificacao` DATETIME NULL,
-    `Status` INT NULL,
-    `Id_condutor` INT NULL
+    `Id_Veiculo` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `Marca` TEXT NOT NULL,
+    `Modelo` TEXT NOT NULL,
+    `Ano_Fabricacao` INT NOT NULL,
+    `placa` VARCHAR(255) NOT NULL,
+    `ultima_verificacao` DATETIME NOT NULL,
+    `Status` INT NOT NULL,
+    `Id_condutor` INT NOT NULL
 );
 CREATE TABLE `Verificacao`(
-    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `Id_Patio` BIGINT NULL,
-    `Id_Veiculo` BIGINT NULL,
-    `Id_Inspetor` BIGINT NULL,
-    `Id_Condutor` BIGINT NULL,
-    `Arquivo_relatorio` VARCHAR(255) NULL,
-    `Status` INT NULL,
-    `Resultado` INT NULL
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `Id_Patio` INT NOT NULL,
+    `Id_Veiculo` INT NOT NULL,
+    `Id_Inspetor` INT NOT NULL,
+    `Id_Condutor` INT NOT NULL,
+    `Arquivo_relatorio` VARCHAR(255) NOT NULL,
+    `Status` INT NOT NULL,
+    `Resultado` INT NOT NULL
 );
 CREATE TABLE `Patio`(
-    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `Pais` TEXT NULL,
-    `Estado` TEXT NULL,
-    `Cidade` TEXT NULL,
-    `CEP` INT NULL,
-    `Logradouro` VARCHAR(255) NULL,
-    `Numero` INT NULL,
-    `Complemento` VARCHAR(255) NULL,
-    `Id_Responsavel` INT NULL,
-    `Arquivo_FTP` VARCHAR(255) NULL,
-    `Arquivo_Server` VARCHAR(255) NULL
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `Pais` TEXT NOT NULL,
+    `Estado` TEXT NOT NULL,
+    `Cidade` TEXT NOT NULL,
+    `CEP` INT NOT NULL,
+    `Logradouro` VARCHAR(255) NOT NULL,
+    `Numero` INT NOT NULL,
+    `Complemento` VARCHAR(255) NOT NULL,
+    `Id_Responsavel` INT NOT NULL,
+    `Arquivo_FTP` VARCHAR(255) NOT NULL,
+    `Arquivo_Server` VARCHAR(255) NOT NULL
 );
 CREATE TABLE `Calendario`(
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `Id_Usuario` INT NULL,
-    `Id_Patio` INT NULL,
-    `Tipo_Agendamento` INT NULL,
-    `Id_Veiculo` INT NULL,
-    `Data` DATE NULL,
-    `Hora` TIME NULL,
-    `Status` INT NULL
+    `Id_Usuario` INT NOT NULL,
+    `Id_Patio` INT NOT NULL,
+    `Tipo_Agendamento` INT NOT NULL,
+    `Id_Veiculo` INT NOT NULL,
+    `Data` DATE NOT NULL,
+    `Hora` TIME NOT NULL,
+    `Status` INT NOT NULL
 );
 ALTER TABLE
     `Calendario` ADD CONSTRAINT `calendario_id_veiculo_foreign` FOREIGN KEY(`Id_Veiculo`) REFERENCES `Veiculos`(`Id_Veiculo`);
