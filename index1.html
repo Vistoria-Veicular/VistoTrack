@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Pessoa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Tela Pessoa</h1>
+    <form id="formPessoa">
+        <div class="form-group">
+            <div>
+                <label for="nomeCompleto">Nome Completo:</label>
+                <input type="text" id="nomeCompleto" name="nomeCompleto" required>
+            </div>
+            <div>
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="date" id="dataNascimento" name="dataNascimento" required>
+            </div>
+        </div>
+
+        <label for="localNascimento">Você é estrangeiro?</label>
+        <select id="localNascimento" name="localNascimento" required onchange="toggleLocalNascimento()">
+            <option value="nacional">Nacional</option>
+            <option value="estrangeiro">Estrangeiro</option>
+        </select>
+
+        <div id="nacional" class="form-group">
+            <div> 
+                <label for="estado">Estado</label>
+                <select id="estado" name="estado" onchange="atualizarCidades()" required>
+                    <option value="">Selecione o Estado</option>
+                </select>
+            </div>
+            <div>
+                <label for="cidade">Cidade:</label>
+                <select id="cidade" name="cidade" required>
+                    <option value="">Selecione a Cidade</option>
+                </select>
+                
+            </div>
+        </div>
+
+        <div id="estrangeiro" style="display: none;">
+            <label for="pais">País:</label>
+            <select id="pais" name="pais">
+                <option value="">Selecione</option>
+                <option value="ZAF">África do Sul</option>
+                <option value="DEU">Alemanha</option>
+                <option value="AGO">Angola</option>
+                <option value="KSA">Arábia Saudita</option>
+                <option value="ARG">Argentina</option>
+                <option value="AUS">Austrália</option>
+                <option value="BOL">Bolívia</option>
+                <option value="CAN">Canadá</option>
+                <option value="CHL">Chile</option>
+                <option value="CHN">China</option>
+                <option value="COL">Colômbia</option>
+                <option value="KOR">Coreia do Sul</option>
+                <option value="CRI">Costa Rica</option>
+                <option value="CUB">Cuba</option>
+                <option value="EGY">Egito</option>
+                <option value="ESP">Espanha</option>
+                <option value="USA">Estados Unidos</option>
+                <option value="ETH">Etiópia</option>
+                <option value="FJI">Fiji</option>
+                <option value="FRA">França</option>
+                <option value="IDN">Indonésia</option>
+                <option value="IND">Índia</option>
+                <option value="IRN">Irã</option>
+                <option value="ITA">Itália</option>
+                <option value="JPN">Japão</option>
+                <option value="MAR">Marrocos</option>
+                <option value="MEX">México</option>
+                <option value="MOZ">Moçambique</option>
+                <option value="NLD">Países Baixos</option>
+                <option value="NGA">Nigéria</option>
+                <option value="NZL">Nova Zelândia</option>
+                <option value="PER">Peru</option>
+                <option value="POL">Polônia</option>
+                <option value="PRT">Portugal</option>
+                <option value="RUS">Rússia</option>
+                <option value="SWE">Suécia</option>
+                <option value="THA">Tailândia</option>
+                <option value="TUR">Turquia</option>
+                <option value="UKR">Ucrânia</option>
+                <option value="VNM">Vietnã</option>
+
+
+            </select>
+        </div>
+
+        <div class="form-group">
+            <div>
+                <label for="nomeMae">Nome da Mãe:</label>
+                <input type="text" id="nomeMae" name="nomeMae" required>
+            </div>
+            <div>
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
+            </div>
+        </div>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+
+        <button type="submit">Enviar</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
