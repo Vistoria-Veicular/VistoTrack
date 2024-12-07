@@ -1,4 +1,3 @@
-// Lista de estados e cidades
 const estadosECidades = {
     AC: ["Rio Branco", "Cruzeiro do Sul", "Sena Madureira"],
     AL: ["Maceió", "Arapiraca", "Palmeira dos Índios"],
@@ -29,7 +28,6 @@ const estadosECidades = {
     TO: ["Palmas", "Araguaína", "Gurupi"],
 };
 
-// Preencher os estados na combobox
 document.addEventListener("DOMContentLoaded", () => {
     const estadoSelect = document.getElementById("estado");
     for (const estado in estadosECidades) {
@@ -40,16 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// Atualizar as cidades com base no estado selecionado
 function atualizarCidades() {
     const estadoSelect = document.getElementById("estado");
     const cidadeSelect = document.getElementById("cidade");
     const cidades = estadosECidades[estadoSelect.value] || [];
 
-    // Limpar cidades atuais
     cidadeSelect.innerHTML = '<option value="">Selecione a Cidade</option>';
 
-    // Adicionar novas cidades
     cidades.forEach((cidade) => {
         const option = document.createElement("option");
         option.value = cidade;
@@ -58,7 +53,6 @@ function atualizarCidades() {
     });
 }
 
-// Mostrar ou ocultar os campos de nacionalidade
 function toggleLocalNascimento() {
     const localNascimento = document.getElementById("localNascimento").value;
     document.getElementById("nacional").style.display = localNascimento === "nacional" ? "flex" : "none";

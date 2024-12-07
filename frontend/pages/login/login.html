@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+            </div>
+
+            <div class="input-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="******" required>
+            </div>
+         
+          
+           
+            <button type="submit">Entrar</button>
+            <div class="forgot-password">
+                <a href="#">Esqueci a senha</a>
+        </form>
+            </div> 
+            <div class="terms-group">
+                <input type="checkbox" id="termos" name="termos" required>
+                <label for="termos" class="terms-label">
+                    Aceito os <a href="#">termos de uso</a> e a <a href="#">política de privacidade</a>.
+                </label>
+            </div>
+
+
+    <script src="login.js"></script>
+</body>
+</html>
