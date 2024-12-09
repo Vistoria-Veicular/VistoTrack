@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuários</title>
+    <link rel="stylesheet" href="usuarios.css"> <!-- Se houver um CSS para estilização -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Bibliotecas JS para facilitar requisição AJAX -->
+</head>
+<body>
+
+    <form id="cadastroForm">
+        <!-- Campo para ID da Pessoa -->
+        <label for="id_pessoa">Pessoa:</label>
+        <div style="display: flex; align-items: center;">
+            <input id="id_pessoa" name="id_pessoa" placeholder="Busque pelo nome completo ou pelo CPF" required>
+            <button type="button" id="btn_buscar" style="margin-left: 10px; width: 40px;">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <br>
+
+        <!-- Campo para EMail -->
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <!-- Campo para Senha -->
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+        <br><br>
+
+        <!-- Campo para Tipo de Usuário -->
+        <label for="tipo_usuario">Tipo de Usuário:</label>
+        <select id="tipo_usuario" name="tipo_usuario" required>
+            <option value="1">Administrador</option>
+            <option value="2">Usuário Comum</option>
+            <option value="3">Moderador</option>
+        </select>
+        <br><br>
+
+        <!-- Campo para Permissões -->
+        <label for="permissao">Permissão:</label>
+        <select id="permissao" name="permissao" required>
+            <option value="1">Full</option>
+            <option value="2">Leitura</option>
+        </select>
+        <br><br>
+
+        <!-- Botão para Submissão -->
+        <button type="submit">Criar</button>
+    </form>
+
+    <div id="message" style="margin-top: 20px;"></div>
+
+    <script src="usuarios.js"></script>
+</body>
+</html>

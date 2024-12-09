@@ -1,0 +1,136 @@
+/* Reset básico para garantir que a formatação seja consistente em todos os navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc; /* Cor de fundo clara */
+    color: #333; /* Texto escuro para contraste */
+    line-height: 1.6;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Título da página */
+h2 {
+    font-size: 2rem;
+    color: #4CAF50; /* Cor verde para o título */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Formulário */
+form {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+    width: 100%;
+}
+
+/* Grupo de campos no formulário */
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.form-group div {
+    flex: 1;
+}
+
+/* Label para cada campo do formulário */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #555;
+}
+
+/* Estilização dos campos de entrada (input) */
+input, button, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Estilização para campos select */
+select {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: all 0.3s ease;
+}
+
+/* Estilo para o campo select quando em foco */
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Estilização dos botões */
+button {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilização dos campos input e select quando em foco */
+input:focus, select:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Mensagens de erro e sucesso */
+#errorMessage, #successMessage {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#errorMessage {
+    color: red;
+}
+
+#successMessage {
+    color: green;
+}
+
+/* Responsividade: Ajusta o layout dos campos em telas pequenas */
+@media (max-width: 600px) {
+    .form-group {
+        flex-direction: column;
+    }
+}

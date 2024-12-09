@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Veículos</title>
+    <link rel="stylesheet" href="veiculos.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <form id="vehicleForm">
+            <label for="marca">Marca</label>
+            <input type="text" id="marca" name="Marca" required>
+
+            <label for="modelo">Modelo</label>
+            <input type="text" id="modelo" name="Modelo" required>
+
+            <label for="ano">Ano de Fabricação</label>
+            <input type="number" id="ano" name="Ano_Fabricacao" required>
+
+            <label for="placa">Placa</label>
+            <input type="text" id="placa" name="placa" required>
+
+            <label for="ultima_verificacao">Última Verificação</label>
+            <input type="date" id="ultima_verificacao" name="ultima_verificacao" required>
+
+            <label for="status">Status</label>
+            <select id="status" name="Status" required>
+                <option value="1">Em operação</option>
+                <option value="2">Em manutenção</option>
+                <option value="3">Inativo</option>
+            </select>
+
+            <label for="id_condutor">ID do Condutor</label>
+            <input type="number" id="id_condutor" name="Id_condutor" required>
+
+            <button type="submit">Cadastrar Veículo</button>
+        </form>
+
+        <div id="responseMessage" class="error"></div>
+    </div>
+</body>
+</html>
